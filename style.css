@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    color: white;
+    background-color: darkblue;
+    min-height: 100px;
+}
+
+.logo {
+    margin: 0 0 0 24px;
+    font-size: 36px;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navlinks a:hover {
+    color: red;
+    text-decoration: underline yellow;
+    text-decoration-thickness: 4px;
+}
+
+.auth {
+    background-color: darkred;
+    color: white;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.auth:hover {
+    background-color: orange;
+    color: darkblue;
+}
+
+.auth:active {
+    color: yellow;
+    background-color: crimson;
+}
+
