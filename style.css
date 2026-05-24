@@ -95,6 +95,7 @@ body {
 .card:hover{
     transition: 0.4s;
     box-shadow: -8px -8px 4px black;
+    cursor: grab;
 
 }
 
