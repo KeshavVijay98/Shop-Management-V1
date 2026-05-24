@@ -74,7 +74,7 @@ body {
     justify-content: center;
     align-items: center;
     justify-items: center;
-    margin: 64px;
+    margin: 80px;
     gap: 56px;
     padding: 28px;
 }
@@ -93,7 +93,7 @@ body {
 }
 
 .card:hover{
-    transition: 0.4s;
+    transition: 0.5s;
     box-shadow: -8px -8px 4px black;
     cursor: grab;
 
@@ -109,4 +109,55 @@ body {
 .card p {
     font-size: 28px;
     font-weight: bold;
+}
+
+.formm{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+    padding: 28px 40px;
+    margin: 100px 20px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: wheat;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 16px 16px 4px whitesmoke;
+}
+
+input {
+    width: 200px;
+}
+
+input, select {
+    font-size: 24px;
+    padding: 8px;
+    background-color: skyblue;
+    color: black;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+button {
+    font-size: 24px;
+    background-color: darkred;
+    color: skyblue;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px black;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub-field {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
