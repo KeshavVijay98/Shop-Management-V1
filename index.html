@@ -49,7 +49,7 @@
             </div>
         </div>
         
-        <form class="formm">
+        <form class="formm" id="product-form">
             <div class="field">
                 <label for="productName">Product Name</label>
                 <div class="sub-field">
@@ -61,7 +61,7 @@
                 <label for="productQuantity">Product Quantity</label>
                 <div class="sub-field">
                     <input type="number" name="productQuantity" id="productQuantity" placeholder="Product Quantity" min="1" max="1000" required>
-                    <select name="productUnit" id="productUnit">
+                    <select name="productUnit" id="productUnit" required>
                         <option value="" selected disabled>Select Unit</option>
                         <option value="L">L</option>
                         <option value="Kg">Kg</option>
@@ -84,5 +84,6 @@
 
 
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

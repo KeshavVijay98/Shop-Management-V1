@@ -142,12 +142,16 @@ input, select {
 button {
     font-size: 24px;
     background-color: darkred;
-    color: skyblue;
+    color: white;
     padding: 8px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0px 4px 4px black;
+    box-shadow: inset 0px 5px 4px white;
+}
+
+button:active {
+    box-shadow: inset 0px -5px 4px white;
 }
 
 .field {
