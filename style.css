@@ -86,6 +86,7 @@ body {
     background-color: lightgrey;
     padding: 0px 16px;
     border-radius: 12px;
+    max-width: 500px;
     min-height: 200px;
     font-size: 20px;
     gap: 24px;
@@ -133,7 +134,7 @@ input {
 input, select {
     font-size: 24px;
     padding: 8px;
-    background-color: skyblue;
+    background-color:skyblue;
     color: black;
     border: 2px solid black;
     border-radius: 8px;
