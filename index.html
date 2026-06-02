@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Management System</title>
-   -\
-++ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -57,7 +56,6 @@
                     <input type="text" name="productName" id="productName" placeholder="Product Name">
                 </div>
             </div>
-
             <div class="field">
                 <label for="productQuantity">Product Quantity</label>
                 <div class="sub-field">
@@ -71,27 +69,26 @@
                     </select>
                 </div>
             </div>
-        
             <div class="field">
                 <label for="productPrice">Product Price</label>
                 <div class="sub-field">
                     <span class="fa-solid fa-indian-rupee-sign"></span>
                     <input type="number" name="productPrice" id="productPrice" placeholder="Product Price">
                 </div>
-            </div>
-                
+            </div>  
             <button type="submit">Add Product</button>      
         </form>
 
-        <table class="p-table">
+
+        <table class="p-table" id="inventory">
             <thead>
                 <tr>
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th>Delete</th>   
                 </tr>
             </thead>
-
             <tbody id="p-t-body">
             </tbody>
         </table>

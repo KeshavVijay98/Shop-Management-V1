@@ -1,6 +1,8 @@
 const products = [];
 const productForm = document.querySelector("#product-form");
 productForm.addEventListener("submit" ,function(event) {
+
+    // validation
     event.preventDefault();
     const name = document.querySelector("#productName").value .trim() .toLowerCase();
     if(name === "") {
@@ -26,7 +28,7 @@ productForm.addEventListener("submit" ,function(event) {
         return;
     }
     if(price<0 || price>1000000) {
-        alert("quantity required");
+        alert("price required");
         return;
     }
     const product = {
@@ -38,6 +40,7 @@ productForm.addEventListener("submit" ,function(event) {
     renderProducts();
 });
 
+// add product
 const ptbody = document.querySelector("#p-t-body");
 function renderProducts() {
     ptbody.innerHTML = "";
@@ -46,8 +49,16 @@ function renderProducts() {
         ptbody.innerHTML += 
         `<tr>
             <td>${product.name}</td>
-            <td>${product.quantity}</td>
-            <td>${product.price}</td>
+            <td>${product.quantity}<select>
+                        <option value="L">L</option>
+                        <option value="Kg">Kg</option>
+                        <option value="packets">packets</option>
+                        <option value="g">g</option>
+                    </select></td>
+            <td>${product.price}<span>Rs</span></td>
+            <td><button>Delete</button></td>
         </tr>`
     }
 }
+
+// delete product
