@@ -192,3 +192,17 @@ td {
     font-size: 28px;
     text-align: center;
 }
+
+.delete, .edit {
+    background-color: black;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: inset 0px 8px 4px grey;
+}
+
+.delete:active, .edit:active {
+    box-shadow: inset 0px -8px 4px grey;
+}

@@ -56,9 +56,14 @@ function renderProducts() {
             <td>${product.name}</td>
             <td>${product.quantity} ${product.unit}</td>
             <td>${product.price} <span>Rs</span></td>
-            <td><button>Delete</button></td>
+            <td><button onclick="deleteProduct(${i})" class="Delete"> <i class="fa-solid fa-trash"> </button></td>
+            <td><button onclick="editProduct(${i})" class="edit"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
         </tr>`
     }
 }
 
 // delete product
+function deleteProduct(index) {
+    products.splice(index, 1);
+    return;
+}
