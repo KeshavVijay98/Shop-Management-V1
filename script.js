@@ -59,6 +59,7 @@ productForm.addEventListener("submit" ,function(event) {
     }
     editingindex = null;
     renderProducts();
+    renderDashboard();
     productForm.reset();
 });
 
@@ -83,6 +84,7 @@ function renderProducts() {
 function deleteProduct(index) {
     products.splice(index, 1);
     renderProducts();
+    renderDashboard();
 }
 
 // edit product
@@ -93,4 +95,27 @@ function editProduct(index) {
     document.querySelector("#productUnit").value = product.unit;
     document.querySelector("#productPrice").value = product.price;
     editingindex = index;
+}
+
+// product summary
+function renderDashboard() {
+    let totalProducts = products.length;
+    let stockQuantity = 0;
+    let lowStock = 0;
+    let stockOut = 0;
+
+    for(let i = 0; i<products.length; i++) {
+        stockQuantity += products[i].quantity;
+        if(products[i].quantity>0 && products[i].quantity<10) {
+            lowStock++;
+        }
+        if(products[i].quantity === 0) {
+            stockOut++;
+        }
+    }
+
+    document.querySelector("#totalProducts").textContent = totalProducts;
+    document.querySelector("#stockQuantity").textContent = stockQuantity;
+    document.querySelector("#lowStock").textContent = lowStock;
+    document.querySelector("#stockOut").textContent = stockOut;
 }
