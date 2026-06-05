@@ -1,8 +1,9 @@
 const products = [];
+let editingindex = null;
 const productForm = document.querySelector("#product-form");
 productForm.addEventListener("submit" ,function(event) {
 
-    // validation
+    // read product and validation 
     event.preventDefault();
     const name = document.querySelector("#productName").value .trim() .toLowerCase();
     if(name === "") {
@@ -19,7 +20,7 @@ productForm.addEventListener("submit" ,function(event) {
         return;
     }
     const quantityy = Number(quantity);
-    if(quantityy<0 || quantityy>100) {
+    if(quantityy<0 || quantityy>1000) {
         alert("quantity required");
         return;
     }
@@ -41,8 +42,24 @@ productForm.addEventListener("submit" ,function(event) {
         unit: unit,
         price: pricee
     }
-    products.push(product)
+    for( let i=0; i<products.length; i++) {
+        if(i === editingindex) {
+            continue;
+        }
+        if(products[i].name === name) {
+            alert("product already exist");
+            return;
+        }
+    }
+    if(editingindex === null) {
+        products.push(product);
+    }
+    else {
+        products[editingindex] = product
+    }
+    editingindex = null;
     renderProducts();
+    productForm.reset();
 });
 
 // add product
@@ -56,7 +73,7 @@ function renderProducts() {
             <td>${product.name}</td>
             <td>${product.quantity} ${product.unit}</td>
             <td>${product.price} <span>Rs</span></td>
-            <td><button onclick="deleteProduct(${i})" class="Delete"> <i class="fa-solid fa-trash"> </button></td>
+            <td><button onclick="deleteProduct(${i})" class="delete"> <i class="fa-solid fa-trash"> </button></td>
             <td><button onclick="editProduct(${i})" class="edit"> <i class="fa-solid fa-pen-to-square"></i> </button></td>
         </tr>`
     }
@@ -65,5 +82,15 @@ function renderProducts() {
 // delete product
 function deleteProduct(index) {
     products.splice(index, 1);
-    return;
+    renderProducts();
+}
+
+// edit product
+function editProduct(index) {
+    const product = products[index];
+    document.querySelector("#productName").value = product.name;
+    document.querySelector("#productQuantity").value = product.quantity;
+    document.querySelector("#productUnit").value = product.unit;
+    document.querySelector("#productPrice").value = product.price;
+    editingindex = index;
 }

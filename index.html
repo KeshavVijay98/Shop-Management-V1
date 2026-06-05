@@ -31,20 +31,19 @@
         <div class="dashboard" id="dashboard">
             <div class="card">
                 <span class="fa-solid fa-box"></span>
-                <div><h2>Total Products</h2> <p>213</p> <p>Product in shop</p> </div>
+                <div><h2>Total Products</h2> <p id="totalProducts">213</p> <p>Product in shop</p> </div>
             </div>
             <div class="card">
                 <span class="fa-solid fa-boxes-stacked"></span>
-                <div><h2> Total Stock Quantity</h2> <p>810</p> <p>Total unit available</p> </div>
+                <div><h2> Total Stock Quantity</h2> <p id="stockQuantity">810</p> <p>Total unit available</p> </div>
             </div>
             <div class="card">
                 <span class="fa-solid fa-box-open"></span>
-                <div><h2>Low Stock</h2> <p>35</p> <p>Product running low</p></div>
+                <div><h2>Low Stock</h2> <p id="lowStock">35</p> <p>Product running low</p></div>
             </div>
             <div class="card">
                 <span class="fa-solid fa-ban"></span>
-                <div><h2>Out Of Stock</h2
-                    > <p>23</p> <p>Items unavailable</p> </div>
+                <div><h2>Out Of Stock</h2> <p id="stockOut">23</p> <p>Items unavailable</p> </div>
             </div>
         </div>
         
@@ -86,7 +85,8 @@
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
-                    <th>Delete</th>   
+                    <th>Delete</th>
+                    <th>Edit</th>   
                 </tr>
             </thead>
             <tbody id="p-t-body">
